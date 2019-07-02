@@ -38,6 +38,34 @@ public:
 };
 */
 
+class Solution {
+public:
+    bool Find(int target, vector<vector<int> > array) {
+        int m,n;
+        int i,j;
+
+        m=array.size();
+        if(m<=0){
+            return false;
+        }
+        n=array[0].size();
+
+        i=0;
+        j=n-1;
+        while(i<m && j>=0){
+            if(array[i][j]>target){
+                j--;
+            }
+            else if(array[i][j]<target){
+                i++;
+            }
+            else{
+                return true;
+            }
+        }
+        return false;
+    }
+};
 
 
 
